@@ -34,18 +34,6 @@ func Start(environment string) {
 	}
 	router := gin.New()
 
-	//set up gin swagger
-	//docs.SwaggerInfo.Title = "Middleware App with Golang - Tulpo"
-	//docs.SwaggerInfo.Description = "Middleware App with Golang - By Tulpo"
-	//docs.SwaggerInfo.Version = "1.0"
-	//if os.Getenv("ENVIRONMENT") == "dev" {
-	//	docs.SwaggerInfo.Host = fmt.Sprintf("%s:%s", os.Getenv("HOST"), os.Getenv("LISTEN_ADDRESS_PORT"))
-	//} else {
-	//	docs.SwaggerInfo.Host = fmt.Sprintf("%s", os.Getenv("HOST"))
-	//}
-	//docs.SwaggerInfo.BasePath = os.Getenv("API_VERSION")
-	//docs.SwaggerInfo.Schemes = []string{os.Getenv("PROTOCOL")}
-
 	// setting router
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
@@ -57,11 +45,6 @@ func Start(environment string) {
 		ExposeHeaders:          []string{"Content-Length"},
 		MaxAge:                 12 * time.Hour,
 	}))
-	// Set a lower memory limit for multipart forms (default is 32 MiB)
-	//router.MaxMultipartMemory = int64(constant.MAX_FILE_SIZE) << 20
-
-	// set public folder
-	//router.Static("/assets", constant.PUBLIC_ASSETS)
 
 	basePath := os.Getenv("API_VERSION")
 	apiRouters := router.Group(basePath)

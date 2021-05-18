@@ -2,41 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df3b4e96-2b1f-4b5c-aa20-838fe869d302" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/rest/router/private/private.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/rest/router/public/public.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/rest/router/router.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/constant/message.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/postgres/migration/000000_create_extension_table.up.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/postgres/migration/000000_create_extention_table.down.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/postgres/migration/000001_create_user_account_table.down.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/postgres/migration/000001_create_user_account_table.up.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/query/user.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/sqlc.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/sqlc/db.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/sqlc/models.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/sqlc/user.sql.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/models.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/user.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/commonFunc.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/password.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/random.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/transfer.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validate.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/interface/user_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/rest/router/private/private.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/private/private.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/rest/router/public/public.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/public/public.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/rest/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
   <component name="GOROOT" path="/usr/local/Cellar/go/1.15.2/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
   </component>
   <component name="ProjectId" id="1si3ZMlRUnJF9w3UTfnf8zU7CVZ" />
   <component name="ProjectViewState">
@@ -44,10 +34,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
+    <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
@@ -58,5 +50,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="725" y="395" width="597" height="490" key="find.popup" timestamp="1621342050960">
+      <screen x="0" y="0" width="2048" height="1280" />
+    </state>
+    <state x="725" y="395" width="597" height="490" key="find.popup/0.0.2048.1280@0.0.2048.1280" timestamp="1621342050960" />
   </component>
 </project>

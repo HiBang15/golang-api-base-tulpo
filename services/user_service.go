@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"github.com/HiBang15/golang-api-base-tulpo.git/constant"
+	_interface "github.com/HiBang15/golang-api-base-tulpo.git/interface"
 	"github.com/HiBang15/golang-api-base-tulpo.git/models"
 	"github.com/HiBang15/golang-api-base-tulpo.git/utils"
 	"log"
@@ -37,7 +38,7 @@ type UserService struct {
 	Connector *models.Connector
 }
 
-func NewUserService() *UserService {
+func NewUserService() _interface.UserInterface {
 	connect := models.NewConnector(connDB)
 	return &UserService{Connector: connect}
 }
