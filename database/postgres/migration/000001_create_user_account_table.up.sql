@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS  "user_account" (
+  "id" SERIAL PRIMARY KEY,
+  "first_name" varchar,
+  "last_name" varchar,
+  "full_name" varchar,
+  "address" varchar,
+  "email" varchar NOT NULL,
+  "password" varchar NOT NULL,
+  "phone_number" varchar,
+  "accepts_marketing" boolean NOT NULL,
+  "code_verify_email" integer,
+  "verify_email" boolean DEFAULT(false),
+  "password_cost" varchar,
+  "registration_time" timestamptz,
+  "email_confirmation_token" varchar,
+  "user_status" int,
+  "password_reminder_token" varchar,
+  "password_reminder_expire" timestamptz,
+  "created_at" timestamptz DEFAULT (now()),
+  "deleted_at" timestamptz,
+  "updated_at" timestamptz DEFAULT (now())
+);
