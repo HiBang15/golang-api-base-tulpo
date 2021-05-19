@@ -31,3 +31,12 @@ func ConvertUserAccount(data database.UserAccount) models.UserAccount {
 		UpdatedAt:        data.UpdatedAt.Time.Unix(),
 	}
 }
+
+func ConvertActivity(data database.Activity) models.Activity  {
+	return models.Activity{
+		Id:       data.ID,
+		Url:      data.Url,
+		Method:   data.Method.String,
+		UrlRegex: data.UrlRegex,
+	}
+}

@@ -16,5 +16,14 @@ func SetRouter(router *gin.RouterGroup) {
 		user.POST("/create", controllers.CreateUserAccount)
 	}
 
+	//group activity
+	activity := router.Group("activity")
+	{
+		activity.POST("/create", controllers.CreateActivity)
+		activity.PUT("/update",controllers.UpdateActivity)
+		activity.DELETE("/delete/:id",controllers.DeleteActivity)
+		activity.GET("/search/:id",controllers.GetActivityByID)
+	}
+
 	log.Print("Finish init private router ....")
 }
