@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df3b4e96-2b1f-4b5c-aa20-838fe869d302" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/interface/user_interface.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/connector.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/rest/router/private/private.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/private/private.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/rest/router/public/public.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/public/public.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/rest/router/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/router.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/user.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/user_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/user_interface.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/user_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/user_service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +46,22 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="go build github.com/HiBang15/golang-api-base-tulpo.git" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="golang-api-base-tulpo" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/HiBang15/golang-api-base-tulpo.git" />
+      <directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build github.com/HiBang15/golang-api-base-tulpo.git" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
@@ -55,9 +70,82 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
+    <state width="2006" height="418" key="GridCell.Tab.0.bottom" timestamp="1621396416395">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.0.bottom/0.25.2048.1214@0.25.2048.1214" timestamp="1621396416395" />
+    <state width="2006" height="418" key="GridCell.Tab.0.center" timestamp="1621396416394">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.0.center/0.25.2048.1214@0.25.2048.1214" timestamp="1621396416394" />
+    <state width="2006" height="418" key="GridCell.Tab.0.left" timestamp="1621396416394">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.0.left/0.25.2048.1214@0.25.2048.1214" timestamp="1621396416394" />
+    <state width="2006" height="418" key="GridCell.Tab.0.right" timestamp="1621396416395">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.0.right/0.25.2048.1214@0.25.2048.1214" timestamp="1621396416395" />
+    <state width="2006" height="418" key="GridCell.Tab.1.bottom" timestamp="1621396418936">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.1.bottom/0.25.2048.1214@0.25.2048.1214" timestamp="1621396418936" />
+    <state width="2006" height="418" key="GridCell.Tab.1.center" timestamp="1621396418936">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.1.center/0.25.2048.1214@0.25.2048.1214" timestamp="1621396418936" />
+    <state width="2006" height="418" key="GridCell.Tab.1.left" timestamp="1621396418936">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.1.left/0.25.2048.1214@0.25.2048.1214" timestamp="1621396418936" />
+    <state width="2006" height="418" key="GridCell.Tab.1.right" timestamp="1621396418936">
+      <screen x="0" y="25" width="2048" height="1214" />
+    </state>
+    <state width="2006" height="418" key="GridCell.Tab.1.right/0.25.2048.1214@0.25.2048.1214" timestamp="1621396418936" />
     <state x="725" y="395" width="597" height="490" key="find.popup" timestamp="1621342050960">
       <screen x="0" y="0" width="2048" height="1280" />
     </state>
     <state x="725" y="395" width="597" height="490" key="find.popup/0.0.2048.1280@0.0.2048.1280" timestamp="1621342050960" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>28</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>33</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>46</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>53</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/services/user_service.go</url>
+          <line>69</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/models/user.go</url>
+          <line>113</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

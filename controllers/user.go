@@ -7,7 +7,6 @@ import (
 	"github.com/HiBang15/golang-api-base-tulpo.git/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"log"
 	"net/http"
 )
 
@@ -39,18 +38,18 @@ func CreateUserAccount(c *gin.Context)  {
 	return
 }
 
-func GetUserAccountByUsernameOrEmail(c *gin.Context) {
-	email := c.Params.ByName("email")
-
-	//get user account
-	//userClient := services.NewUserService()
-	var userService = services.NewUserService()
-	res, err := userService.GetUserAccountByEmail(email)
-	if err != nil {
-		log.Printf("get user fails with error: %v", err)
-		utils.SetResponse(c, http.StatusInternalServerError, err, constant.CANNOT_GET_USERACCOUNT, nil)
-		return
-	}
-	utils.SetResponse(c, http.StatusOK, err, constant.GET_USERACCOUNT_SUCCESSFUL, res)
-	return
-}
+//func GetUserAccountByUsernameOrEmail(c *gin.Context) {
+//	email := c.Params.ByName("email")
+//
+//	//get user account
+//	//userClient := services.NewUserService()
+//	var userService = services.NewUserService()
+//	res, err := userService.GetUserAccountByEmail(email)
+//	if err != nil {
+//		log.Printf("get user fails with error: %v", err)
+//		utils.SetResponse(c, http.StatusInternalServerError, err, constant.CANNOT_GET_USERACCOUNT, nil)
+//		return
+//	}
+//	utils.SetResponse(c, http.StatusOK, err, constant.GET_USERACCOUNT_SUCCESSFUL, res)
+//	return
+//}
