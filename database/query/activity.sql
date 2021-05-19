@@ -12,7 +12,7 @@ RETURNING *;
 -- name: UpdateActivity :one
 UPDATE activities
 SET url = $2, method = $3, url_regex = $4
-WHERE id = $1 and deleted_at í null
+WHERE id = $1 and deleted_at is null
 RETURNING *;
 
 -- name: DeleteActivity :exec

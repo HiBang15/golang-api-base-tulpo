@@ -6,6 +6,48 @@ import (
 	"database/sql"
 )
 
+type Activity struct {
+	ID        int32          `json:"id"`
+	Url       string         `json:"url"`
+	Method    sql.NullString `json:"method"`
+	UrlRegex  string         `json:"url_regex"`
+	CreatedAt sql.NullTime   `json:"created_at"`
+	DeletedAt sql.NullTime   `json:"deleted_at"`
+	UpdatedAt sql.NullTime   `json:"updated_at"`
+}
+
+type Permission struct {
+	ID        int32        `json:"id"`
+	Name      string       `json:"name"`
+	CreatedAt sql.NullTime `json:"created_at"`
+	DeletedAt sql.NullTime `json:"deleted_at"`
+	UpdatedAt sql.NullTime `json:"updated_at"`
+}
+
+type PermissionActivity struct {
+	PermissionID int32        `json:"permission_id"`
+	ActivityID   int32        `json:"activity_id"`
+	CreatedAt    sql.NullTime `json:"created_at"`
+	DeletedAt    sql.NullTime `json:"deleted_at"`
+	UpdatedAt    sql.NullTime `json:"updated_at"`
+}
+
+type Role struct {
+	ID        int32        `json:"id"`
+	Name      string       `json:"name"`
+	CreatedAt sql.NullTime `json:"created_at"`
+	DeletedAt sql.NullTime `json:"deleted_at"`
+	UpdatedAt sql.NullTime `json:"updated_at"`
+}
+
+type RolePermission struct {
+	RoleID       int32        `json:"role_id"`
+	PermissionID int32        `json:"permission_id"`
+	CreatedAt    sql.NullTime `json:"created_at"`
+	DeletedAt    sql.NullTime `json:"deleted_at"`
+	UpdatedAt    sql.NullTime `json:"updated_at"`
+}
+
 type UserAccount struct {
 	ID                     int32          `json:"id"`
 	FirstName              sql.NullString `json:"first_name"`
@@ -27,4 +69,12 @@ type UserAccount struct {
 	CreatedAt              sql.NullTime   `json:"created_at"`
 	DeletedAt              sql.NullTime   `json:"deleted_at"`
 	UpdatedAt              sql.NullTime   `json:"updated_at"`
+}
+
+type UserRole struct {
+	UserID    int64        `json:"user_id"`
+	RoleID    int32        `json:"role_id"`
+	CreatedAt sql.NullTime `json:"created_at"`
+	DeletedAt sql.NullTime `json:"deleted_at"`
+	UpdatedAt sql.NullTime `json:"updated_at"`
 }
