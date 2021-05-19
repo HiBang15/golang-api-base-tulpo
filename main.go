@@ -17,9 +17,7 @@ func init() {
 	}
 }
 
-// @securityDefinitions.apikey bearerAuth
-// @in header
-// @name Authorization
+
 func main() {
 	//run Rest API
 	fmt.Println("Start run REST API .....")
