@@ -3,6 +3,7 @@ package models
 import (
 	"context"
 	"database/sql"
+
 	database "github.com/HiBang15/golang-api-base-tulpo.git/database/sqlc"
 )
 
@@ -25,7 +26,6 @@ type UpdateActivityRequest struct {
 	Method   string `json:"method"`
 	UrlRegex string `json:"url_regex"`
 }
-
 
 func (cnt *Connector) CreateActivity(ctx context.Context, request CreateActivity) (response database.Activity, err error) {
 	err = cnt.execTx(ctx, func(queries *database.Queries) error {
@@ -64,26 +64,38 @@ func (cnt *Connector) UpdateActivity(ctx context.Context, request UpdateActivity
 	return response, nil
 }
 
-func (cnt *Connector)DeleteActivity(ctx context.Context, id int32) (bool,error)  {
+func (cnt *Connector) DeleteActivity(ctx context.Context, id int32) (bool, error) {
 	err := cnt.execTx(ctx, func(queries *database.Queries) error {
 		var err error
-		err = queries.DeleteActivity(ctx,id)
+		err = queries.DeleteActivity(ctx, id)
 		return err
 	})
 	if err != nil {
-		return false ,err
+		return false, err
 	}
-	return true,nil
+	return true, nil
 }
 
-func (cnt *Connector)GetActivityByID(ctx context.Context, id int32)(response database.Activity, err error){
+func (cnt *Connector) GetActivityByID(ctx context.Context, id int32) (response database.Activity, err error) {
 	err = cnt.execTx(ctx, func(queries *database.Queries) error {
 		var err error
-		response ,err = queries.GetActivityByID(ctx)
+		response, err = queries.GetActivityByID(ctx)
 		return err
 	})
-	if err!= nil{
-		return database.Activity{},err
+	if err != nil {
+		return database.Activity{}, err
 	}
-	return response,nil
+	return response, nil
+}
+
+func (cnt *Connector) GetListActivity(ctx context.Context) (response []database.Activity, err error) {
+	err = cnt.execTx(ctx, func(queries *database.Queries) error {
+		var err error
+		response, err = queries.GetListActivity(ctx)
+		return err
+	})
+	if err != nil {
+		return []database.Activity{}, err
+	}
+	return response, nil
 }

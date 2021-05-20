@@ -1,18 +1,19 @@
 package controllers
 
 import (
+	"net/http"
+	"strconv"
+
 	"github.com/HiBang15/golang-api-base-tulpo.git/constant"
 	"github.com/HiBang15/golang-api-base-tulpo.git/models"
 	"github.com/HiBang15/golang-api-base-tulpo.git/services"
 	"github.com/HiBang15/golang-api-base-tulpo.git/utils"
 	"github.com/gin-gonic/gin"
-	"net/http"
-	"strconv"
 )
 
 //var userService = services.NewUserService()
 
-func CreateActivity(c *gin.Context)  {
+func CreateActivity(c *gin.Context) {
 	var activity models.CreateActivity
 	if err := c.ShouldBindJSON(&activity); err != nil {
 		utils.SetResponse(c, http.StatusUnprocessableEntity, err, constant.INVALID_REQUEST_BODY, nil)
@@ -32,21 +33,21 @@ func CreateActivity(c *gin.Context)  {
 	return
 }
 
-func UpdateActivity(c *gin.Context)  {
+func UpdateActivity(c *gin.Context) {
 	var activity models.UpdateActivityRequest
-	if err := c.ShouldBindJSON(&activity); err != nil{
-		utils.SetResponse(c,http.StatusUnprocessableEntity,err,constant.INVALID_REQUEST_BODY,nil)
+	if err := c.ShouldBindJSON(&activity); err != nil {
+		utils.SetResponse(c, http.StatusUnprocessableEntity, err, constant.INVALID_REQUEST_BODY, nil)
 		return
 	}
 	var activityService = services.NewActivityService()
-	response , err := activityService.UpdateActivity(activity)
-	if err!= nil{
-		utils.SetResponse(c,http.StatusOK,nil,constant.UPDATE_ACTIVITY_SUCCESS, response)
+	response, err := activityService.UpdateActivity(activity)
+	if err != nil {
+		utils.SetResponse(c, http.StatusOK, nil, constant.UPDATE_ACTIVITY_SUCCESS, response)
 		return
 	}
 }
 
-func DeleteActivity(c *gin.Context)  {
+func DeleteActivity(c *gin.Context) {
 	id := c.Param("id")
 
 	if id == "" {
@@ -70,7 +71,7 @@ func DeleteActivity(c *gin.Context)  {
 	return
 }
 
-func GetActivityByID(c *gin.Context)  {
+func GetActivityByID(c *gin.Context) {
 	id := c.Param("id")
 	if id == "" {
 		utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.INVALID_REQUEST_PARAM, nil)
@@ -86,10 +87,21 @@ func GetActivityByID(c *gin.Context)  {
 	activityService := services.NewActivityService()
 	response, err := activityService.GetActivityByID(int32(activityID))
 	if err != nil {
-		utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.CANNOT_GETACTIVITYBYID_ACTIVITY, response)
+		utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.CANNOT_GETACTIVITYBYID, response)
 		return
 	}
-	utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.GETACTIVITYBYID_ACTIVITY_SUCCESSFUL, response)
+	utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.GETACTIVITYBYID_SUCCESSFUL, response)
 	return
 
+}
+
+func GetListActivity(c *gin.Context) {
+	activityService := services.NewActivityService()
+	response, err := activityService.GetListActivity()
+	if err != nil {
+		utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.CANNOT_GETLISTACTIVITY, response)
+		return
+	}
+	utils.SetResponse(c, http.StatusUnprocessableEntity, nil, constant.GETLISTACTIVITY_SUCCESSFUL, response)
+	return
 }

@@ -27,9 +27,12 @@ const (
 
 	UPDATE_ACTIVITY_SUCCESS = "Update activity successful!"
 
-	CANNOT_DELETE_ACTIVITY = "Cannot delete activity!"
+	CANNOT_DELETE_ACTIVITY     = "Cannot delete activity!"
 	DELETE_ACTIVITY_SUCCESSFUL = "Delete activity successful!"
 
-	CANNOT_GETACTIVITYBYID_ACTIVITY = "Cannot GetActivityById activity!"
-	GETACTIVITYBYID_ACTIVITY_SUCCESSFUL = "GetActivityById activity successful!"
+	CANNOT_GETACTIVITYBYID     = "Cannot get activity by id!"
+	GETACTIVITYBYID_SUCCESSFUL = "Get activity by id successful!"
+
+	CANNOT_GETLISTACTIVITY     = "Cannot get list activity!"
+	GETLISTACTIVITY_SUCCESSFUL = "Get list activity successful!"
 )
