@@ -70,15 +70,16 @@ func (a *ActivityService) GetActivityByID(id int32) (response models.Activity, e
 
 func (a *ActivityService) GetListActivity() (response []models.Activity, err error) {
 	log.Println("receive get list activity")
-	activity, err := a.Connector.GetListActivity(context.Background())
+	listActivity, err := a.Connector.GetListActivity(context.Background())
 	if err != nil {
 		return []models.Activity{}, err
 	}
-	log.Println("get list activity success")
-	for _ ,val := response {
-		var item utils.ConvertActivity(activity)
-		reponse = append(response,item)
-	}
-	return response, nil
 
+	for _, val := range listActivity {
+		var item = utils.ConvertActivity(val)
+		response = append(response, item)
+	}
+
+	log.Println("get list activity success")
+	return response, nil
 }
