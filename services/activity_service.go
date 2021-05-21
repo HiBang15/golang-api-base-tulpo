@@ -52,6 +52,7 @@ func (a *ActivityService) DeleteActivity(id int32) (bool, error) {
 	if err != nil {
 		return false, err
 	}
+
 	log.Println("delete activity success")
 	return activity, nil
 

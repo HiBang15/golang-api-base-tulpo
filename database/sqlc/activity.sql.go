@@ -8,6 +8,17 @@ import (
 	"database/sql"
 )
 
+const checkActivityExists = `-- name: CheckActivityExists :one
+SELECT EXISTS (SELECT id, url, method, url_regex, created_at, deleted_at, updated_at FROM activities WHERE id = $1 AND deleted_at is null)
+`
+
+func (q *Queries) CheckActivityExists(ctx context.Context, id int32) (bool, error) {
+	row := q.db.QueryRowContext(ctx, checkActivityExists, id)
+	var exists bool
+	err := row.Scan(&exists)
+	return exists, err
+}
+
 const createActivity = `-- name: CreateActivity :one
 INSERT INTO activities (
     url, method, url_regex
@@ -50,11 +61,11 @@ func (q *Queries) DeleteActivity(ctx context.Context, id int32) error {
 }
 
 const getActivityByID = `-- name: GetActivityByID :one
-SELECT id, url, method, url_regex, created_at, deleted_at, updated_at FROM activities WHERE id = 1 AND deleted_at is null
+SELECT id, url, method, url_regex, created_at, deleted_at, updated_at FROM activities WHERE id = $1 AND deleted_at is null
 `
 
-func (q *Queries) GetActivityByID(ctx context.Context) (Activity, error) {
-	row := q.db.QueryRowContext(ctx, getActivityByID)
+func (q *Queries) GetActivityByID(ctx context.Context, id int32) (Activity, error) {
+	row := q.db.QueryRowContext(ctx, getActivityByID, id)
 	var i Activity
 	err := row.Scan(
 		&i.ID,

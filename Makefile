@@ -1,5 +1,5 @@
 sqlc:
-	cd database; sqlc generate; cd ../..;
+	cd database; sqlc generate; cd ..;
 run:
 	go run main.go;
 migrateup:

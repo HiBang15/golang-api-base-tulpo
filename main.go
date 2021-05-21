@@ -2,10 +2,11 @@ package main
 
 import (
 	"fmt"
-	"github.com/HiBang15/golang-api-base-tulpo.git/api/rest/router"
-	"github.com/joho/godotenv"
 	"log"
 	"os"
+
+	"github.com/HiBang15/golang-api-base-tulpo.git/api/rest/router"
+	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 )
 

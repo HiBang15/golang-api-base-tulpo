@@ -2,6 +2,7 @@ package utils
 
 import (
 	"encoding/json"
+
 	database "github.com/HiBang15/golang-api-base-tulpo.git/database/sqlc"
 	"github.com/HiBang15/golang-api-base-tulpo.git/models"
 )
@@ -32,11 +33,19 @@ func ConvertUserAccount(data database.UserAccount) models.UserAccount {
 	}
 }
 
-func ConvertActivity(data database.Activity) models.Activity  {
+func ConvertActivity(data database.Activity) models.Activity {
 	return models.Activity{
 		Id:       data.ID,
 		Url:      data.Url,
 		Method:   data.Method.String,
 		UrlRegex: data.UrlRegex,
+	}
+}
+
+func ConvertPermission(data database.Permission, listActivity []models.Activity) models.Permission {
+	return models.Permission{
+		Id:         data.ID,
+		Name:       data.Name,
+		Activities: listActivity,
 	}
 }

@@ -1,5 +1,5 @@
 -- name: GetActivityByID :one
-SELECT * FROM activities WHERE id = 1 AND deleted_at is null;
+SELECT * FROM activities WHERE id = $1 AND deleted_at is null;
 
 -- name: CreateActivity :one
 INSERT INTO activities (
@@ -22,3 +22,6 @@ WHERE id = $1;
 
 -- name: GetListActivity :many
 SELECT * FROM activities WHERE deleted_at is null;
+
+-- name: CheckActivityExists :one
+SELECT EXISTS (SELECT * FROM activities WHERE id = $1 AND deleted_at is null);

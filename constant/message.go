@@ -35,4 +35,7 @@ const (
 
 	CANNOT_GETLISTACTIVITY     = "Cannot get list activity!"
 	GETLISTACTIVITY_SUCCESSFUL = "Get list activity successful!"
+
+	CREATE_PERMISSION_SUCCESS = "Create permission successful!"
+	CANNOT_CREATE_PERMISSION  = "Cannot create permission!"
 )

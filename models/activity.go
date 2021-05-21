@@ -79,7 +79,7 @@ func (cnt *Connector) DeleteActivity(ctx context.Context, id int32) (bool, error
 func (cnt *Connector) GetActivityByID(ctx context.Context, id int32) (response database.Activity, err error) {
 	err = cnt.execTx(ctx, func(queries *database.Queries) error {
 		var err error
-		response, err = queries.GetActivityByID(ctx)
+		response, err = queries.GetActivityByID(ctx, id)
 		return err
 	})
 	if err != nil {

@@ -2,13 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df3b4e96-2b1f-4b5c-aa20-838fe869d302" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/activity.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/activity_service.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/query/permission.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/query/permission_activity.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/rest/router/private/private.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/rest/router/private/private.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/constant/message.go" beforeDir="false" afterPath="$PROJECT_DIR$/constant/message.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/activity_interface.go" beforeDir="false" afterPath="$PROJECT_DIR$/interface/activity_interface.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/query/activity.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/query/activity.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/sqlc/activity.sql.go" beforeDir="false" afterPath="$PROJECT_DIR$/database/sqlc/activity.sql.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/activity.go" beforeDir="false" afterPath="$PROJECT_DIR$/models/activity.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/activity_service.go" beforeDir="false" afterPath="$PROJECT_DIR$/services/activity_service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/transfer.go" beforeDir="false" afterPath="$PROJECT_DIR$/utils/transfer.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +29,7 @@
       </list>
     </option>
   </component>
-  <component name="GOROOT" url="file://C:/Program Files/Go" />
+  <component name="GOROOT" url="file:///usr/lib/go-1.13" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -46,22 +52,24 @@
   <component name="PropertiesComponent">
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/controllers" />
+    <property name="go.vendoring.notification.had.been.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../demo" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/query" />
       <recent name="D:\WorkSpace\src\golang-api-base-tulpo\controllers" />
       <recent name="D:\WorkSpace\src\golang-api-base-tulpo\services" />
       <recent name="D:\WorkSpace\src\golang-api-base-tulpo\interface" />
       <recent name="D:\WorkSpace\src\golang-api-base-tulpo\database\query" />
-      <recent name="D:\WorkSpace\src\golang-api-base-tulpo\models" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Makefile Target.sqlc">
     <configuration name="go build github.com/HiBang15/golang-api-base-tulpo.git" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="golang-api-base-tulpo" />
       <working_directory value="$PROJECT_DIR$" />
@@ -71,8 +79,15 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
+    <configuration name="sqlc" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile" temporary="true">
+      <makefile filename="$PROJECT_DIR$/Makefile" target="sqlc" workingDirectory="" arguments="">
+        <envs />
+      </makefile>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Makefile Target.sqlc" />
         <item itemvalue="Go Build.go build github.com/HiBang15/golang-api-base-tulpo.git" />
       </list>
     </recent_temporary>
@@ -91,6 +106,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
